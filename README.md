@@ -74,7 +74,6 @@ are served from Marfa, TX.
 ## TODO
 
 - Allow custom error handlers (easy)
-- Re-register dispatch rules during hot OTP
-  upgrade (harder)
-- Statically analyze handler AST during registration
-  to create preliminary dispatch rules (hardest)
+- Register new dispatch rules during hot OTP upgrade (harder)
+- Statically analyze handler AST during registration to
+  create preliminary dispatch rules (hardest)
