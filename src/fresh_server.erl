@@ -3,6 +3,8 @@
 -module(fresh_server).
 -export([start/0, start/2, stop/0, stop/1, loop/1]).
 
+-define(SERVER, "Fresh/0.1 (you know it's fresh)").
+
 start() ->
     Port = case application:get_env(fresh, port) of
         {ok, P} -> P;
@@ -81,6 +83,5 @@ respond(Status, ContentType, Resp, Req) ->
     respond(Status, ContentType, [], Resp, Req).
 
 respond(Status, ContentType, Headers, Resp, Req) ->
-    Req:respond({Status, [
-        {"Server", "Fresh/0.1 (you know this shit's fresh)"},
-        {"Content-Type", ContentType} | Headers], Resp}).
+    Req:respond({Status, [{"Server", ?SERVER},
+                          {"Content-Type", ContentType} | Headers], Resp}).

@@ -54,7 +54,7 @@ handle_call({dispatch, Method, Parts, Req}, From, Tab) ->
         Q = qlc:q([Pid || {Pid, Rules} <- Registry, Rules(Method, Parts, Req)]),
         Reply = case qlc:e(Q) of
             [] ->
-                {404, "text/plain", <<"Not found.">>};
+                {404, "text/plain", "Not Found"};
             [Pid | _] ->
                 fresh_handler:handle(Pid, Method, Parts, Req)
         end,
