@@ -1,9 +1,9 @@
-% Copyright (c) 2010, Devin Torres <devin@devintorres.com>
+% Fresh by Devin Torres <devin@devintorres.com>
 
 -module(fresh_server).
 -export([start/0, start/2, stop/0, stop/1, loop/1]).
 
--define(SERVER, "Fresh/0.1 (you know it's fresh)").
+-define(SERVER, "Fresh/0.2 (you know it's fresh)").
 
 start() ->
     Port = case application:get_env(fresh, port) of

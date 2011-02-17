@@ -1,4 +1,4 @@
-% Copyright (c) 2010, Devin Torres <devin@devintorres.com>
+% Fresh by Devin Torres <devin@devintorres.com>
 
 -module(fresh_registry).
 -behavior(gen_server).
